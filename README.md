@@ -1,2 +1,0 @@
-# mirandola
-Giovanni Mirandola

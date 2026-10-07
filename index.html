@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Джовани Пико дела Мирандола — Времева линия</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #f4f1eb;
+      color: #29251f;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 25px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .header .years {
+      color: #8b5e3c;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 4px;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin: 12px 0;
+    }
+
+    .subtitle {
+      color: #746e66;
+      font-family: Arial, sans-serif;
+      font-size: 17px;
+    }
+
+    .timeline {
+      position: relative;
+      padding: 10px 0;
+    }
+
+    /* Централната линия */
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: #cfc7bd;
+      transform: translateX(-50%);
+    }
+
+    .event {
+      position: relative;
+      width: 50%;
+      padding: 15px 45px;
+      margin-bottom: 25px;
+    }
+
+    .event:nth-child(odd) {
+      left: 0;
+      text-align: right;
+    }
+
+    .event:nth-child(even) {
+      left: 50%;
+      text-align: left;
+    }
+
+    /* Точките върху линията */
+    .event::after {
+      content: "";
+      position: absolute;
+      top: 28px;
+      width: 17px;
+      height: 17px;
+      background: #f4f1eb;
+      border: 4px solid #8b5e3c;
+      border-radius: 50%;
+      z-index: 2;
+    }
+
+    .event:nth-child(odd)::after {
+      right: -10px;
+    }
+
+    .event:nth-child(even)::after {
+      left: -10px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #ddd6cc;
+      border-radius: 14px;
+      padding: 20px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: #8b5e3c;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .year {
+      color: #8b5e3c;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .title {
+      font-size: 21px;
+      font-weight: bold;
+      margin: 7px 0;
+    }
+
+    .details {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: all 0.3s ease;
+      color: #6e685f;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .card.active .details {
+      max-height: 250px;
+      opacity: 1;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #e4ded6;
+    }
+
+    .key-idea {
+      margin-top: 55px;
+      padding: 25px 30px;
+      background: #eadfd4;
+      border-left: 5px solid #8b5e3c;
+      border-radius: 10px;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    .key-idea strong {
+      color: #6d472f;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #8a837a;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+    }
+
+    /* Мобилна версия */
+    @media (max-width: 700px) {
+      .container {
+        padding: 40px 15px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .timeline::before {
+        left: 18px;
+      }
+
+      .event,
+      .event:nth-child(even),
+      .event:nth-child(odd) {
+        width: 100%;
+        left: 0;
+        text-align: left;
+        padding-left: 50px;
+        padding-right: 5px;
+      }
+
+      .event::after,
+      .event:nth-child(odd)::after,
+      .event:nth-child(even)::after {
+        left: 9px;
+        right: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="container">
+
+    <header class="header">
+      <div class="years">1463 — 1494</div>
+
+      <h1>
+        Джовани Пико<br>
+        дела Мирандола
+      </h1>
+
+      <p class="subtitle">
+        Животът и философските идеи на един от най-ярките представители на Ренесанса
+      </p>
+    </header>
+
+
+    <section class="timeline">
+
+      <!-- 1463 -->
+      <article class="event">
+        <div class="card">
+          <div class="year">1463</div>
+          <div class="title">Раждане</div>
+
+          <div class="details">
+            На 24 февруари Пико дела Мирандола е роден в Болоня.
+            Още от малък проявява изключителна памет и изучава
+            латински, гръцки и иврит.
+          </div>
+        </div>
+      </article>
+
+
+      <!-- 1477 -->
+      <article class="event">
+        <div class="card">
+          <div class="year">~1477</div>
+          <div class="title">Начало на образованието</div>
+
+          <div class="details">
+            На 14 години постъпва в Болонския университет,
+            където изучава богословие.
+          </div>
+        </div>
+      </article>
+
+
+      <!-- 1479 -->
+      <article class="event">
+        <div class="card">
+          <div class="year">1479</div>
+          <div class="title">Флоренция</div>
+
+          <div class="details">
+            Пико се сближава с философския кръг около Марсилио Фичино
+            и развива интереса си към Платон и ренесансовия хуманизъм.
+          </div>
+        </div>
+      </article>
+
+
+      <!-- 1480-1482 -->
+      <article class="event">
+        <div class="card">
+          <div class="year">1480–1482</div>
+          <div class="title">Падуанският университет</div>
+
+          <div class="details">
+            Изучава средновековната философия, теологията и аристотелизма.
+            Задълбочава знанията си по различни езици и философски традиции.
+          </div>
+        </div>
+      </article>
+
+
+      <!-- 1485 -->
+      <article class="event">
+        <div class="card">
+          <div class="year">1485</div>
+          <div class="title">Париж и „900-те тези“</div>
+
+          <div class="details">
+            Пътува до Париж и започва работа върху своите
+            900 тези, посветени на религията, философията и мистиката.
+          </div>
+        </div>
+      </article>
+
+
+      <!-- 1486 -->
+      <article class="event">
+        <div class="card">
+          <div class="year">1486</div>
+          <div class="title">„Реч за достойнството на човека“</div>
+
+          <div class="details">
+            Публикува „900-те тези“. Въведението към тях е прочутата
+            „Реч за достойнството на човека“, в която защитава
+            свободата на човека да избира и да изгражда себе си.
+          </div>
+        </div>
+      </article>
+
+
+      <!-- 1486-1488 -->
+      <article class="event">
+        <div class="card">
+          <div class="year">1486–1488</div>
+          <div class="title">Конфликт с Църквата</div>
+
+          <div class="details">
+            Папа Инокентий VIII първо осъжда 13 от тезите,
+            а след това всички 900. Пико попада в сериозен
+            конфликт с Църквата.
+          </div>
+        </div>
+      </article>
+
+
+      <!-- 1488 -->
+      <article class="event">
+        <div class="card">
+          <div class="year">1488</div>
+          <div class="title">Франция</div>
+
+          <div class="details">
+            Опитвайки се да избегне Инквизицията, Пико отива във Франция,
+            където е заловен и затворен. По-късно е освободен
+            с помощта на Шарл VIII и Лоренцо де Медичи.
+          </div>
+        </div>
+      </article>
+
+
+      <!-- 1489-1491 -->
+      <article class="event">
+        <div class="card">
+          <div class="year">1489–1491</div>
+          <div class="title">Късни философски съчинения</div>
+
+          <div class="details">
+            Създава „Хептаплус“ (1489) и
+            „За съществуващото и единното“ (1491).
+          </div>
+        </div>
+      </article>
+
+
+      <!-- 1494 -->
+      <article class="event">
+        <div class="card">
+          <div class="year">1494</div>
+          <div class="title">Критика на астрологията</div>
+
+          <div class="details">
+            В „Разсъждения против астрологията“ Пико отхвърля
+            астралния детерминизъм и защитава свободната воля.
+            Според него трябва да се изучават реалните природни
+            закономерности, а не да се разчита на врачуване.
+          </div>
+        </div>
+      </article>
+
+
+      <!-- Смърт -->
+      <article class="event">
+        <div class="card">
+          <div class="year">17 ноември 1494</div>
+          <div class="title">Смърт</div>
+
+          <div class="details">
+            Пико умира във Флоренция на 31-годишна възраст.
+            Погребан е в Доминиканския манастир „Свети Марко“.
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+
+    <section class="key-idea">
+      <strong>Ключова идея:</strong><br>
+
+      Човекът има свободата да избира какъв да бъде —
+      и именно в тази свобода Пико вижда основата
+      на човешкото достойнство.
+    </section>
+
+
+    <footer>
+      Джовани Пико дела Мирандола · 1463–1494
+    </footer>
+
+  </main>
+
+
+  <script>
+    // Отваряне и затваряне на събитията
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+      card.addEventListener("click", () => {
+
+        // Затваря всички останали
+        cards.forEach(otherCard => {
+          if (otherCard !== card) {
+            otherCard.classList.remove("active");
+          }
+        });
+
+        // Отваря/затваря избраното
+        card.classList.toggle("active");
+      });
+    });
+  </script>
+
+</body>
+</html>
